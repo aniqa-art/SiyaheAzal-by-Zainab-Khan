@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Siyah e Azal — Zainab Khan</title>
+<meta name="description" content="Siyah e Azal, an Urdu psychological thriller by Zainab Khan. Set on the island of Solarais, where beauty, power, and secrets share the same shadow." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- AMBIENT LAYER — dust + fog, present throughout -->
+<!-- ============================================= -->
+<canvas id="dust-canvas"></canvas>
+<div class="fog-layer" aria-hidden="true">
+  <div class="fog fog--a"></div>
+  <div class="fog fog--b"></div>
+  <div class="fog fog--c"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============================================= -->
+<!-- OPENING SCENE -->
+<!-- ============================================= -->
+<section id="opening" class="opening" aria-label="Opening sequence">
+  <div class="heartbeat-pulse" aria-hidden="true"></div>
+  <p class="opening-line" data-line="1">Some doors should never be opened.</p>
+  <p class="opening-line" data-line="2">Some memories should never return.</p>
+  <button id="enter-btn" class="enter-btn" aria-label="Enter Siyah e Azal">
+    <span>Enter</span>
+  </button>
+</section>
+
+<!-- ============================================= -->
+<!-- MAIN EXPERIENCE (hidden until opening completes) -->
+<!-- ============================================= -->
+<main id="main-experience">
+
+  <!-- LOGO REVEAL / HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-mansion" aria-hidden="true">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" class="mansion-svg">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#050505"/>
+            <stop offset="55%" stop-color="#0b1410"/>
+            <stop offset="100%" stop-color="#0f2419"/>
+          </linearGradient>
+          <linearGradient id="moonGlow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#efe6c8" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#efe6c8" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1600" height="900" fill="url(#skyGrad)"/>
+        <circle cx="1280" cy="150" r="150" fill="url(#moonGlow)"/>
+        <circle cx="1280" cy="150" r="46" fill="#f4ecd8" opacity="0.85"/>
+        <!-- mansion silhouette -->
+        <g fill="#050505">
+          <rect x="480" y="480" width="640" height="300" />
+          <rect x="560" y="360" width="180" height="140" />
+          <rect x="860" y="360" width="180" height="140" />
+          <polygon points="540,360 650,290 760,360" />
+          <polygon points="850,360 950,290 1050,360" />
+          <rect x="740" y="260" width="120" height="220" />
+          <polygon points="730,260 800,190 870,260" />
+          <rect x="620" y="600" width="70" height="180" />
+          <rect x="900" y="600" width="70" height="180" />
+          <rect x="770" y="560" width="60" height="220" />
+          <rect x="380" y="560" width="90" height="220" />
+          <rect x="1130" y="560" width="90" height="220" />
+        </g>
+        <g class="mansion-windows">
+          <rect x="600" y="410" width="26" height="40" fill="#d4af37" opacity="0.55"/>
+          <rect x="900" y="410" width="26" height="40" fill="#d4af37" opacity="0.3"/>
+          <rect x="780" y="300" width="24" height="34" fill="#d4af37" opacity="0.45"/>
+          <rect x="640" y="640" width="24" height="60" fill="#d4af37" opacity="0.4"/>
+          <rect x="930" y="640" width="24" height="60" fill="#d4af37" opacity="0.25"/>
+        </g>
+        <rect x="0" y="780" width="1600" height="120" fill="#050505"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="logo-title">
+        <span class="logo-line">SIYAH</span>
+        <span class="logo-divider" aria-hidden="true"></span>
+        <span class="logo-line">E AZAL</span>
+      </h1>
+      <p class="logo-author">by Zainab Khan</p>
+      <div class="scroll-cue" aria-hidden="true">
+        <span></span>
+        <p>scroll</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLARAIS -->
+  <section id="solarais" class="solarais reveal-section">
+    <div class="solarais-bg" aria-hidden="true"></div>
+    <div class="reveal-content">
+      <p class="eyebrow">the island</p>
+      <h2 class="section-title">SOLARAIS</h2>
+      <p class="section-subtitle">
+        A paradise built on power.<br/>
+        A city drowning in secrets.
+      </p>
+    </div>
+  </section>
+
+  <!-- JEELANI SISTERS -->
+  <section id="sisters" class="sisters reveal-section">
+    <div class="reveal-content sisters-intro">
+      <p class="eyebrow">confidential — four files</p>
+      <h2 class="section-title">THE JEELANI SISTERS</h2>
+      <p class="section-subtitle">
+        Four sisters.<br/>
+        Four destinies.<br/>
+        One mystery.
+      </p>
+    </div>
+
+    <div class="sisters-grid">
+
+      <article class="sister-card" tabindex="0" data-file="01">
+        <div class="sister-card-inner">
+          <div class="sister-card-face">
+            <span class="sister-file-tag">FILE No. 01</span>
+            <div class="sister-portrait sister-portrait--zeelaf"></div>
+            <h3 class="sister-name">Zeelaf Jeelani</h3>
+            <p class="sister-role">The Detective</p>
+            <p class="sister-hint">Click to unseal</p>
+          </div>
+          <div class="sister-card-quote">
+            <p>"I stopped looking for the truth the day I married it."</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="sister-card" tabindex="0" data-file="02">
+        <div class="sister-card-inner">
+          <div class="sister-card-face">
+            <span class="sister-file-tag">FILE No. 02</span>
+            <div class="sister-portrait sister-portrait--aska"></div>
+            <h3 class="sister-name">Aska Jeelani</h3>
+            <p class="sister-role">Classified</p>
+            <p class="sister-hint">Click to unseal</p>
+          </div>
+          <div class="sister-card-quote">
+            <p>"Every sister keeps one secret from the others. Mine keeps me awake."</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="sister-card" tabindex="0" data-file="03">
+        <div class="sister-card-inner">
+          <div class="sister-card-face">
+            <span class="sister-file-tag">FILE No. 03</span>
+            <div class="sister-portrait sister-portrait--maaram"></div>
+            <h3 class="sister-name">Maaram Jeelani</h3>
+            <p class="sister-role">Classified</p>
+            <p class="sister-hint">Click to unseal</p>
+          </div>
+          <div class="sister-card-quote">
+            <p>"They think I'm the gentle one. They haven't seen me choose."</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="sister-card" tabindex="0" data-file="04">
+        <div class="sister-card-inner">
+          <div class="sister-card-face">
+            <span class="sister-file-tag">FILE No. 04</span>
+            <div class="sister-portrait sister-portrait--reeja"></div>
+            <h3 class="sister-name">Reeja Jeelani</h3>
+            <p class="sister-role">Classified</p>
+            <p class="sister-hint">Click to unseal</p>
+          </div>
+          <div class="sister-card-quote">
+            <p>"The youngest always sees the most. No one ever asks her what she saw."</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ZEELAF & ZARGHAM SPLIT SCREEN -->
+  <section id="union" class="union reveal-section">
+    <div class="union-side union-side--left">
+      <p class="union-eyebrow">Detective</p>
+      <h3 class="union-name">ZEELAF JEELANI</h3>
+    </div>
+    <div class="union-center">
+      <div class="ring-wrap" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="ring-svg">
+          <path class="ring-half ring-half--left" d="M100,20 A80,80 0 0 0 100,180" fill="none" stroke="#d4af37" stroke-width="6"/>
+          <path class="ring-half ring-half--right" d="M100,20 A80,80 0 0 1 100,180" fill="none" stroke="#d4af37" stroke-width="6"/>
+        </svg>
+      </div>
+      <div class="union-words">
+        <span>Married.</span>
+        <span>Divorced.</span>
+        <span>Lovers.</span>
+        <span>Enemies.</span>
+      </div>
+      <p class="union-tagline">Neither truly escaped the other.</p>
+    </div>
+    <div class="union-side union-side--right">
+      <p class="union-eyebrow">Mafia Boss</p>
+      <h3 class="union-name">ZARGHAM DURANI</h3>
+    </div>
+  </section>
+
+  <!-- STORY / MYSTERIOUS STATEMENTS -->
+  <section id="story" class="story">
+    <div class="story-line reveal-section"><p>Some truths demand blood.</p></div>
+    <div class="story-line story-line--alt reveal-section"><p>Justice has a price.</p></div>
+    <div class="story-line reveal-section"><p>Not every monster hides in darkness.</p></div>
+    <div class="story-line story-line--alt reveal-section"><p>The past never forgets.</p></div>
+  </section>
+
+  <!-- READER REVIEWS -->
+  <section id="reviews" class="reviews reveal-section">
+    <p class="eyebrow">what readers are saying</p>
+    <h2 class="section-title section-title--sm">Whispers From Solarais</h2>
+
+    <div class="reviews-grid">
+      <blockquote class="review-card">
+        <p>"I haven't stopped thinking about Zeelaf since I finished the last page. Zainab Khan writes betrayal like poetry."</p>
+        <cite>— Hira A., reader</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>"Solarais felt like a character of its own — beautiful and merciless. I read it in one sitting."</p>
+        <cite>— Fatima R., reader</cite>
+      </blockquote>
+      <blockquote class="review-card">
+        <p>"The Jeelani sisters deserve their own universe. Every chapter unravels something you thought you understood."</p>
+        <cite>— Sana M., reader</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- BUY SECTION -->
+  <section id="buy" class="buy reveal-section">
+    <p class="eyebrow">the door is open</p>
+    <h2 class="section-title section-title--sm">Siyah e Azal</h2>
+    <button class="buy-btn">
+      <span>Begin Reading</span>
+    </button>
+    <p class="buy-author">Written by Zainab Khan</p>
+  </section>
+
+  <!-- ENDING -->
+  <section id="ending" class="ending">
+    <div class="heartbeat-pulse heartbeat-pulse--end" aria-hidden="true"></div>
+    <p class="ending-line" data-line="1">The truth was never buried.</p>
+    <p class="ending-line" data-line="2">It was waiting.</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
