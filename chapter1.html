@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Siyah e Azal — Chapter One</title>
+<meta name="description" content="Read Chapter One of Siyah e Azal, an Urdu psychological thriller by Zainab Khan." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Cinzel + Inter reused from the landing page; Noto Nastaliq Urdu added for RTL body chrome (labels only, not the chapter text itself) -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Reusing the landing page's design tokens and section styles as-is -->
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="chapter1.css" />
+</head>
+<body class="chapter-body">
+
+<!-- ============================================= -->
+<!-- AMBIENT LAYER — identical system to the landing page -->
+<!-- ============================================= -->
+<canvas id="dust-canvas"></canvas>
+<div class="fog-layer" aria-hidden="true">
+  <div class="fog fog--a"></div>
+  <div class="fog fog--b"></div>
+  <div class="fog fog--c"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============================================= -->
+<!-- STICKY READING PROGRESS BAR -->
+<!-- ============================================= -->
+<div class="progress-rail" aria-hidden="true">
+  <div id="progress-fill" class="progress-fill"></div>
+</div>
+
+<!-- ============================================= -->
+<!-- CHAPTER OPENING — fade in from black on load -->
+<!-- ============================================= -->
+<section id="chapter-opening" class="chapter-opening">
+  <div class="heartbeat-pulse" aria-hidden="true"></div>
+  <p class="chapter-eyebrow">Siyah e Azal</p>
+  <h1 class="chapter-title">Chapter One</h1>
+  <div class="chapter-scroll-cue">
+    <span></span>
+    <p>Scroll to Begin</p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- READING EXPERIENCE -->
+<!-- ============================================= -->
+<main class="reading-main">
+
+  <section class="reading-frame-wrap reveal-section">
+    <div class="reading-frame-header">
+      <span class="reading-frame-eyebrow">پہلا باب</span>
+      <span class="reading-frame-divider" aria-hidden="true"></span>
+      <span class="reading-frame-title">Siyah e Azal — Chapter One</span>
+    </div>
+
+    <div class="reading-frame">
+      <div id="pdf-loading" class="pdf-loading">
+        <div class="pdf-loading-spinner" aria-hidden="true"></div>
+        <p>Opening the first page…</p>
+      </div>
+      <iframe
+        id="chapter-pdf"
+        class="reading-pdf"
+        src="chapter1.pdf#toolbar=0&navpane=0&view=FitH"
+        title="Siyah e Azal — Chapter One"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="reading-frame-footnote">For the clearest reading experience, you can also open the chapter directly — <a href="chapter1.pdf" target="_blank" rel="noopener">view full screen</a>.</p>
+  </section>
+
+</main>
+
+<!-- ============================================= -->
+<!-- END OF CHAPTER -->
+<!-- ============================================= -->
+<section id="chapter-end" class="chapter-end">
+  <div class="heartbeat-pulse heartbeat-pulse--end" aria-hidden="true"></div>
+
+  <div class="chapter-end-content reveal-section">
+    <h2 class="chapter-end-title">You've reached the end of Chapter One.</h2>
+    <p class="chapter-end-line">Some stories end here. This one has only just begun.</p>
+
+    <div class="chapter-end-divider" aria-hidden="true"></div>
+
+    <p class="chapter-end-prompt">Want to know when the next chapter or the full novel is available?</p>
+    <p class="chapter-end-subprompt">Follow the official fan page on Instagram</p>
+
+    <a class="instagram-cta" href="https://instagram.com/siyah_fangirl" target="_blank" rel="noopener">
+      <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+      </svg>
+      <span>@siyah_fangirl</span>
+    </a>
+
+    <a class="back-link" href="index.html">← Return to Solarais</a>
+  </div>
+</section>
+
+<script src="chapter1.js"></script>
+</body>
+</html>
