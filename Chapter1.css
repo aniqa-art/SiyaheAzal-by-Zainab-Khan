@@ -1,0 +1,336 @@
+/* =====================================================
+   SIYAH E AZAL — Chapter One reading experience
+   Extends style.css. Reuses the same design tokens,
+   ambient layers, and section language as the landing page.
+   ===================================================== */
+
+.chapter-body{
+  background:var(--black);
+}
+
+/* =====================================================
+   STICKY PROGRESS BAR
+   ===================================================== */
+
+.progress-rail{
+  position:fixed;
+  top:0; left:0; right:0;
+  height:3px;
+  background:rgba(255,255,255,.05);
+  z-index:200;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--gold-muted), var(--gold));
+  box-shadow:0 0 12px var(--shadow-gold);
+  transition:width .1s linear;
+}
+
+/* =====================================================
+   CHAPTER OPENING
+   ===================================================== */
+
+.chapter-opening{
+  position:relative;
+  height:100vh;
+  min-height:600px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(ellipse at center, rgba(212,175,55,.05) 0%, transparent 60%), var(--black);
+  overflow:hidden;
+}
+
+.chapter-eyebrow{
+  font-family:var(--font-body);
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:var(--gold-muted);
+  margin:0 0 1.2rem;
+  opacity:0;
+  animation:chFadeIn 2s var(--ease-cinematic) forwards;
+  animation-delay:.3s;
+}
+
+.chapter-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  letter-spacing:.15em;
+  font-size:clamp(2.2rem, 6vw, 4rem);
+  color:var(--text-primary);
+  margin:0;
+  text-shadow:0 0 40px var(--shadow-gold);
+  opacity:0;
+  animation:chFadeIn 2.2s var(--ease-cinematic) forwards;
+  animation-delay:.8s;
+}
+
+@keyframes chFadeIn{
+  from{ opacity:0; transform:translateY(16px); filter:blur(6px); }
+  to{ opacity:1; transform:translateY(0); filter:blur(0); }
+}
+
+.chapter-scroll-cue{
+  margin-top:4rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.6rem;
+  opacity:0;
+  animation:chFadeIn 2s var(--ease-cinematic) forwards;
+  animation-delay:2.2s;
+}
+
+.chapter-scroll-cue span{
+  width:1px; height:36px;
+  background:linear-gradient(var(--gold), transparent);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+
+.chapter-scroll-cue p{
+  font-size:.68rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin:0;
+}
+
+/* =====================================================
+   READING FRAME
+   ===================================================== */
+
+.reading-main{
+  position:relative;
+  z-index:10;
+  padding:6rem 1.5rem 8rem;
+  display:flex;
+  justify-content:center;
+}
+
+.reading-frame-wrap{
+  width:100%;
+  max-width:920px;
+}
+
+.reading-frame-header{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1.4rem;
+  flex-wrap:wrap;
+}
+
+.reading-frame-eyebrow{
+  font-family:'Noto Nastaliq Urdu', serif;
+  font-size:1.3rem;
+  color:var(--gold);
+}
+
+.reading-frame-divider{
+  flex:1;
+  height:1px;
+  background:linear-gradient(90deg, rgba(212,175,55,.4), transparent);
+  min-width:40px;
+}
+
+.reading-frame-title{
+  font-family:var(--font-body);
+  letter-spacing:.08em;
+  font-size:.75rem;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
+.reading-frame{
+  position:relative;
+  border-radius:6px;
+  border:1px solid rgba(212,175,55,.18);
+  background:linear-gradient(145deg, #0c0c0c, #141414);
+  box-shadow:0 30px 80px var(--shadow-deep), 0 0 60px rgba(212,175,55,.06);
+  overflow:hidden;
+  aspect-ratio:3 / 4;
+  min-height:520px;
+}
+
+.reading-pdf{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  border:none;
+  background:#111;
+}
+
+.pdf-loading{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+  color:var(--text-muted);
+  font-size:.8rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.pdf-loading-spinner{
+  width:34px; height:34px;
+  border-radius:50%;
+  border:1px solid rgba(212,175,55,.2);
+  border-top-color:var(--gold);
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+.reading-frame-footnote{
+  margin-top:1.4rem;
+  text-align:center;
+  font-size:.8rem;
+  color:var(--text-muted);
+}
+
+.reading-frame-footnote a{
+  color:var(--gold-muted);
+  text-decoration:none;
+  border-bottom:1px solid rgba(212,175,55,.3);
+  transition:color .3s ease, border-color .3s ease;
+}
+
+.reading-frame-footnote a:hover{
+  color:var(--gold);
+  border-color:var(--gold);
+}
+
+/* =====================================================
+   CHAPTER END
+   ===================================================== */
+
+.chapter-end{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:6rem 1.5rem;
+  background:radial-gradient(ellipse at center, rgba(212,175,55,.05) 0%, transparent 55%), var(--black);
+  overflow:hidden;
+}
+
+.chapter-end-content{
+  position:relative;
+  z-index:2;
+  max-width:640px;
+}
+
+.chapter-end-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(1.5rem, 4vw, 2.4rem);
+  color:var(--text-primary);
+  letter-spacing:.03em;
+  margin:0 0 1.2rem;
+  line-height:1.5;
+}
+
+.chapter-end-line{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(1rem, 2.2vw, 1.25rem);
+  color:var(--gold);
+  margin:0;
+}
+
+.chapter-end-divider{
+  width:60px;
+  height:1px;
+  background:var(--gold-muted);
+  opacity:.5;
+  margin:2.8rem auto;
+}
+
+.chapter-end-prompt{
+  font-size:1rem;
+  color:var(--text-secondary);
+  margin:0 0 .4rem;
+}
+
+.chapter-end-subprompt{
+  font-size:.85rem;
+  color:var(--text-muted);
+  letter-spacing:.06em;
+  margin:0 0 2rem;
+}
+
+.instagram-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+  padding:1rem 2.2rem;
+  border-radius:2px;
+  background:linear-gradient(135deg, var(--gold-muted), var(--gold));
+  color:var(--black);
+  font-family:var(--font-display);
+  letter-spacing:.08em;
+  font-size:1rem;
+  text-decoration:none;
+  box-shadow:0 0 40px var(--shadow-gold);
+  transition:transform .4s var(--ease-cinematic), box-shadow .4s ease;
+}
+
+.instagram-cta:hover, .instagram-cta:focus-visible{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 60px rgba(212,175,55,.5);
+  outline:none;
+}
+
+.instagram-icon{
+  width:20px; height:20px;
+  color:var(--black);
+}
+
+.back-link{
+  display:block;
+  margin-top:3rem;
+  font-size:.75rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:color .3s ease;
+}
+
+.back-link:hover{
+  color:var(--gold);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 640px){
+  .reading-frame{
+    aspect-ratio:auto;
+    height:70vh;
+    min-height:420px;
+  }
+  .reading-frame-header{
+    justify-content:center;
+    text-align:center;
+  }
+  .instagram-cta{
+    padding:.9rem 1.6rem;
+    font-size:.9rem;
+  }
+}
