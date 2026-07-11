@@ -212,7 +212,10 @@
   if(buyBtn){
     buyBtn.addEventListener('click', () => {
       buyBtn.style.transform = 'scale(0.97)';
-      setTimeout(() => { buyBtn.style.transform = ''; }, 200);
+      setTimeout(() => {
+        buyBtn.style.transform = '';
+        window.location.href = 'chapter1.html';
+      }, 200);
     });
   }
 
