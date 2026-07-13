@@ -296,8 +296,16 @@
 }
 
 .instagram-icon{
-  width:20px; height:20px;
-  color:var(--black);
+    width:20px !important;
+    height:20px !important;
+    min-width:20px;
+    min-height:20px;
+    max-width:20px;
+    max-height:20px;
+    display:block;
+    flex-shrink:0;
+    color:var(--black);
+}
 }
 
 .back-link{
